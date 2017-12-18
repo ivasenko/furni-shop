@@ -1,0 +1,52 @@
+.banners{
+  display: flex;
+  font-family: 'Raleway', sans-serif;
+  margin-bottom: 60px;
+}
+.banner{
+  width: 33.3%;
+  position: relative;
+  &:hover{
+    opacity: 0.7;
+    cursor: pointer;
+  }
+}
+.banner__img{
+  & img{
+    width: 100%;
+  }
+}
+.banner__content{
+  position: absolute;
+  top: 30px;
+  left: 20%;
+  z-index: 3;
+
+}
+.banner__title{
+  font-size: 30px;
+  line-height: 20px;
+  color: rgb(67,71,74);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  span{
+    font-weight: 700;
+  }
+}
+.banner__subtitle{
+  font-size: 16px;
+  line-height: 20px;
+  color: rgb(67,71,74);
+  text-transform: uppercase;
+  span{
+    font-weight: 700;
+  }
+}
+.banner-second span{
+  color: rgb(6,163,216);
+}
+.banner-third{
+  span{
+    color: rgb(239,28,37);
+  }
+}

@@ -1,0 +1,215 @@
+.featured-products{
+  width: 1170px;
+  font-family: 'Raleway', sans-serif;
+  margin: 0 auto 40px;
+}
+.wrapper-featured-products{
+  position: relative;
+}
+.featured-products__title{
+  text-align: center;
+  font-size: 20px;
+  text-transform: uppercase;
+  position: relative;
+  margin-bottom: 40px;
+  line-height: 30px;
+  color: #434343;
+  span{
+    color: rgb(39,156,199);
+    font-weight: 900;
+  }
+}
+.featured-products__title:before,
+.featured-products__title:after{
+  content: '';
+  display: inline-block;
+  width: 216px;
+  height: 1px;
+  background-color: #434343;
+  position: absolute;
+  left: calc(50% - 108px);
+}
+.featured-products__title:before{
+  top: 30px;
+}
+.featured-products__title:after{
+  bottom: 30px;
+}
+.featured-products__item{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #ddd;
+  background-color: $color-text-on-dark;
+  margin-right: 30px;
+  &:last-child{
+    margin-right: 0;
+  }
+  &:hover{
+    cursor: pointer;
+  }
+}
+.featured-product:hover .featured-product__name,
+.featured-product:hover .featured-actions__add{
+  font-size: 14px;
+  color: rgb(190,174,89);
+  font-weight:900;
+}
+.featured-product__img{
+  @extend .product__img;
+  position: relative;
+  height: 300px;
+  //width: 300px;
+}
+.featured-product__img-wrapper{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  background: #fff;
+  visibility: hidden;
+  opacity: 0;
+
+}
+.featured-product__img:hover .featured-product__img-wrapper{
+  visibility: visible;
+  opacity: 0.5;
+}
+
+.img-zoom{
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+  top: 25%;
+  left: calc(50% - 35px);
+  width: 70px;
+  height: 70px;
+  background: rgba(0,0,0,0.5);
+  border-radius: 50%;
+  z-index: 55;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $color-text-on-dark;
+  &:hover{
+    background: $main-color;
+    opacity: 1;
+  }
+}
+.featured-product__img:hover .img-zoom{
+  visibility: visible;
+  opacity: 1;
+}
+.featured-product__img + .featured-product__img-wrapper{
+  visibility: hidden;
+  opacity: 0;
+}
+.featured-product__img:hover + .featured-product__img-wrapper{
+  visibility: visible;
+  opacity: 1;
+}
+.featured-product__name,
+.featured-product__rating,
+.featured-product__price {
+  text-align: center;
+}
+
+.featured-product__name{
+  @extend .product__name;
+  margin-bottom: 15px;
+}
+.featured-product__rating{
+  margin-bottom: 15px;
+}
+.featured-product__gold-stars{
+  @extend .product__gold-stars;
+}
+.featured-product__price{
+  margin-bottom: 25px;
+}
+.featured-product__new-price{
+  @extend .product__new-price;
+}
+.featured-product__old-price{
+  @extend .product__old-price;
+}
+.featured-product__actions{
+  display: flex;
+  border-top: 1px solid #ddd;
+  align-items: center;
+  justify-content: center;
+}
+.featured-actions__compare{
+  @extend .actions__compare;
+}
+.featured-actions__add{
+  @extend .actions__add;
+  &:hover span{
+    color: $color-text-on-dark;
+  }
+}
+.featured-actions__like{
+  @extend .actions__like;
+}
+.compare__tooltip, .add__tooltip, .like__tooltip, .img-zoom{
+  @extend .tooltip;
+}
+
+.compare__tooltip-text, .add__tooltip-text, .like__tooltip-text, .img-zoom-text{
+  @extend .tooltip-text;
+}
+.add__tooltip-text{
+  font-weight: 400;
+  text-transform: none;
+}
+.like__tooltip-text{
+  width: 85px;
+}
+
+.slick-next,
+.slick-prev{
+  z-index: 5;
+  font-size: 22px;
+  line-height: 30px;
+  color: rgb(157,157,157);
+  width: 36px;
+  height: 36px;
+  background: $color-text-on-dark;
+  border: 1px solid #ddd;
+  &:hover{
+    background: $main-color;
+    border: 1px solid $main-color;
+  }
+}
+.slick-next{
+  right: 28px;
+}
+.slick-prev{
+  left: 0;
+}
+.slick-prev::before,
+.slick-next::before{
+  font-family: "FontAwesome";
+  color: rgb(157,157,157);
+}
+.slick-next::before {
+  content: '\f105';
+
+}
+.slick-prev::before {
+  content: '\f104';
+}
+.slick-prev:hover:before,
+.slick-prev:focus:before,
+.slick-next:hover:before,
+.slick-next:focus:before{
+  opacity: 1;
+  color: $color-text-on-dark;
+}
+.slick-prev.slick-disabled:before,
+.slick-next.slick-disabled:before
+{
+  opacity: 1;
+}

@@ -1,0 +1,10 @@
+.block-bg-color{
+  height: 565px;
+  background: #eee;
+  position: relative;
+}
+.block-absolute{
+  position: absolute;
+  top: -60px;
+  left: calc(50% - 585px);
+}

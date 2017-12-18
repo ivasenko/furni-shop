@@ -1,0 +1,17 @@
+@import 'common';
+@import 'header';
+@import 'main-slider';
+@import 'block-absolute';
+@import 'common-products';
+@import 'services';
+@import 'featured-products';
+@import 'banners';
+@import 'best-sellers';
+@import 'responsive';
+
+body{
+  margin: 0 auto;
+}
+.container{
+  margin: 0 auto;
+}

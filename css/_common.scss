@@ -1,0 +1,149 @@
+$main-color-blue: #279bc7;
+$main-color-blue_hover: #1985ad;
+$main-color: $main-color-blue;
+$main-color-hover: $main-color-blue_hover;
+$color-text: rgb(153,153,153);
+$color-text-on-dark: #fff;
+$color-add-to-cart: rgb(39,156,199);
+$color-stars: rgb(255,150,0);;
+$color-current-price: rgb(225,49,49);
+$color-dot_active: #bdad59;
+
+body{
+  font-family: 'Raleway', sans-serif;
+}
+a{
+  font-family: 'Raleway', sans-serif;
+}
+
+.dot{
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: $color-text-on-dark;
+}
+.label{
+  width: 50px;
+  height: 30px;
+  border-radius: 5px;
+  border-bottom-left-radius: 0px;
+  position: relative;
+  display: inline-block;
+  background: #f00;
+
+}
+.label-pointer{
+  display: inline-block;
+  position: absolute;
+  content: '';
+  top: 50px;
+  left:0px;
+  border-top: 10px solid red;
+  border-right: 10px solid transparent;
+}
+.product__img {
+  overflow: hidden;
+  img {
+    width: 100%;
+  }
+}
+.product__name{
+  font-size: 14px;
+  color: rgb(72,72,72);
+  font-weight: 900;
+  text-transform: uppercase;
+  &:hover{
+    color: $main-color;
+  }
+}
+.product__gold-stars{
+  font-size: 12px;
+  color: $color-stars;
+}
+.product__gray-stars{
+  font-size: 12px;
+  color: rgb(153,153,153);
+}
+.product__new-price{
+  font-size: 16px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  color: $color-current-price;
+}
+.product__old-price{
+  font-size: 12px;
+  color: rgb(153,153,153);
+  text-decoration: line-through;
+  font-family: 'Open Sans', sans-serif;
+}
+.product__line{
+  width: 270px;
+  height: 1px;
+  background: $color-text;
+}
+.actions__compare{
+  color: $color-text;
+  padding: 15px;
+  &:hover{
+    background: $main-color;
+    color: $color-text-on-dark;
+  }
+}
+.actions__add{
+  text-transform: uppercase;
+  font-size: 14px;
+  color: rgb(39,156,199);
+  font-weight: 900;
+  padding: 15px 35px;
+  &:hover{
+    background: $main-color;
+    color: $color-text-on-dark;
+  }
+}
+.actions__like{
+  color: $color-text;
+  padding:15px;
+  &:hover{
+    background: $main-color;
+    color: $color-text-on-dark;
+  }
+}
+
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltip-text {
+  font-size: 12px;
+  padding: 5px 10px;
+  border-radius: 12px;
+  background: rgba(0,0,0,0.5);
+  visibility: hidden;
+  color: $color-text-on-dark;
+  text-align: center;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -35px;
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.tooltip .tooltip-text::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}

@@ -1,0 +1,122 @@
+.best-sellers{
+  width: 1170px;
+  margin: 45px auto 40px;
+}
+.best-sellers__title{
+}
+
+.wrapper-best-sellers{
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 40px;
+}
+.best-sellers__item{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #ddd;
+  background-color: $color-text-on-dark;
+  margin-right: 30px;
+  &:last-child{
+    margin-right: 0;
+  }
+  &:hover{
+    cursor: pointer;
+  }
+}
+.best-seller:hover .best-seller__name, .best-seller:hover .best-seller-actions__add{
+  font-size: 14px;
+  color: rgb(190,174,89);
+  font-weight:900;
+}
+.best-seller__img{
+  @extend .product__img;
+  position: relative;
+  height: 300px;
+}
+.best-seller__img-wrapper{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  background: $color-text-on-dark;
+  visibility: hidden;
+  opacity: 0;
+
+}
+.best-seller__img:hover .best-seller__img-wrapper{
+  visibility: visible;
+  opacity: 0.5;
+}
+.best-seller__img:hover .img-zoom{
+  visibility: visible;
+  opacity: 1;
+}
+.best-seller__img + .best-seller__img-wrapper{
+  visibility: hidden;
+  opacity: 0;
+}
+.best-seller__img:hover + .best-seller__img-wrapper{
+  visibility: visible;
+  opacity: 1;
+}
+
+.best-seller__name,
+.best-seller__rating,
+.best-seller__price {
+  text-align: center;
+}
+
+.best-seller__name{
+  @extend .product__name;
+  margin-bottom: 15px;
+}
+.best-seller__rating{
+  margin-bottom: 15px;
+}
+.best-seller__gold-stars{
+  @extend .product__gold-stars;
+}
+.best-seller__price{
+  margin-bottom: 25px;
+}
+.best-seller__new-price{
+  @extend .product__new-price;
+}
+.best-seller__old-price{
+  @extend .product__old-price;
+}
+.best-seller-actions{
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid #ddd;
+}
+.best-seller-actions__compare{
+  @extend .actions__compare;
+}
+.best-seller-actions__add{
+  @extend .actions__add;
+  &:hover span{
+    color: $color-text-on-dark;
+  }
+}
+.best-seller-actions__like{
+  @extend .actions__like;
+}
+.compare__tooltip, .add__tooltip, .like__tooltip, .img-zoom{
+  @extend .tooltip;
+}
+
+.compare__tooltip-text, .add__tooltip-text, .like__tooltip-text, .img-zoom-text{
+  @extend .tooltip-text;
+}
+.add__tooltip-text{
+  font-weight: 400;
+  text-transform: none;
+}
+.like__tooltip-text{
+  width: 85px;
+}
